@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Stories</title>
+  <meta name="description" content="Create Stories">
+  <meta name="author" content="Alpay Sabuncuoglu">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../lib/reveal.js-3.7.0/css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js-3.7.0/css/theme/black.css" id="theme">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <script src="../lib/blockly_compressed.js"></script>
+  <script src="../lib/blocks_compressed.js"></script>
+  <script src="../lib/javascript_compressed.js"></script>
+  <script src="../msg/js/en.js"></script>
+  <script src="./toolbox.js"></script>
+</head>
+
+<body>
+  <header>
+  </header>
+  <a href="#storyArea" class="scroll-down" address="true"></a>
+  <section id="blocklyArea">
+    <div id="blocklyDiv" style="position: absolute"></div>
+    <button class="mode-play mdl-button" id="play">PLAY</button>
+    <button class="mode-createStory mdl-button" id="createStory">CREATE</button>
+  </section>
+  <div id="storyArea" class="reveal">
+    
+  <a href="#blocklyArea" class="scroll-up" address="true"></a>
+    <div class="slides">
+      <section>
+        <h1>Story Name</h1>
+      </section>
+
+      <section>
+        <section data-background="#dddddd">
+          <h2>Slide Backgrounds</h2>
+          <p>
+            Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color
+            formats are supported.
+          </p>
+          <a href="#" class="navigate-down">
+            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+          </a>
+        </section>
+        <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+          <h2>Image Backgrounds</h2>
+          <pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+        </section>
+        <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png"
+          data-background-repeat="repeat" data-background-size="100px">
+          <h2>Tiled Backgrounds</h2>
+          <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+        </section>
+        <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
+          data-background-color="#000000">
+          <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+            <h2>Video Backgrounds</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+          </div>
+        </section>
+        <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+          <h2>... and GIFs!</h2>
+        </section>
+      </section>
+    </div>
+  </div>
+  <script src="./music_maker.js"></script>
+  <script src="./story_creator.js"></script>
+  <script src="./custom_blocks.js"></script>
+  <script src="./main.js"></script>
+  <script src="./custom-dialog.js"></script>
+  <script src="../lib/reveal.js-3.7.0/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js-3.7.0/js/reveal.js"></script>
+  <script>
+
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: '../lib/reveal.js-3.7.0/lib/js/classList.js', condition: function () { return !document.body.classList; } }
+      ]
+    });
+
+    Reveal.addEventListener('ready', function (event) {
+      Reveal.add = function (content = '', index = -1) {
+        dom = {},
+          dom.slides = document.querySelector('.reveal .slides');
+        var newSlide = document.createElement('section');
+        if (index === -1) { //adding slide to end
+          newSlide.classList.add('future');
+          dom.slides.appendChild(newSlide);
+          document.querySelector('.navigate-right').classList.add('enabled'); //just enable it, even if it is
+        } else if (index > Reveal.getIndices().h) {
+          newSlide.classList.add('future');
+          dom.slides.insertBefore(newSlide, dom.slides.querySelectorAll('section:nth-child(' + (index + 1) + ')')[0]);
+        } else if (index <= Reveal.getIndices().h) {
+          newSlide.classList.add('past');
+          dom.slides.insertBefore(newSlide, dom.slides.querySelectorAll('section:nth-child(' + (index + 1) + ')')[0]);
+          Reveal.next();
+        }
+        newSlide.innerHTML = content;
+      };
+
+      Reveal.remove = function (index = -1) {
+        dom = {},
+          dom.wrapper = document.querySelector('.reveal');
+        dom.slides = document.querySelector('.reveal .slides');
+        var target = (dom.wrapper.querySelectorAll('.slides > section:nth-child(' + (index + 1) + ')')[0]) ? dom.wrapper.querySelectorAll('.slides > section:nth-child(' + (index + 1) + ')')[0] : false;
+
+        if (index === -1) {
+          if (Reveal.isLastSlide()) Reveal.prev();
+          dom.slides.removeChild(dom.wrapper.querySelectorAll('.slides > section')[dom.wrapper.querySelectorAll('.slides > section').length - 1]);
+          if (Reveal.isLastSlide()) document.querySelector('.navigate-right').classList.remove('enabled');
+        } else if (index > Reveal.getIndices().h && target) {
+          dom.slides.removeChild(target);
+          if (Reveal.getIndices().h == dom.wrapper.querySelectorAll('.slides > section').length - 1) document.querySelector('.navigate-right').classList.remove('enabled');
+        } else if (index < Reveal.getIndices().h && target) {
+          dom.slides.removeChild(target);
+          location.hash = '/' + parseInt(Reveal.getIndices().h - 1);
+        } else if (index == Reveal.getIndices().h && target) {
+          if (index == 0) {
+            Reveal.next();
+            document.querySelector('.navigate-left').classList.remove('enabled');
+          } else Reveal.prev();
+          dom.slides.removeChild(target);
+          if (dom.wrapper.querySelectorAll('.slides > section').length == index) document.querySelector('.navigate-right').classList.remove('enabled');
+        }
+      };
+    });
+  </script>
+
+  <script>
+    var blocklyArea = document.getElementById('blocklyArea');
+    var blocklyDiv = document.getElementById('blocklyDiv');
+    var demoWorkspace = Blockly.inject(blocklyDiv,
+      {
+        media: '../media/',
+        toolbox: CodeNotes.TOOLBOX_XML
+      });
+    var onresize = function (e) {
+      // Compute the absolute coordinates and dimensions of blocklyArea.
+      var element = blocklyArea;
+      var x = 0;
+      var y = 0;
+      do {
+        x += element.offsetLeft;
+        y += element.offsetTop;
+        element = element.offsetParent;
+      } while (element);
+      // Position blocklyDiv over blocklyArea.
+      blocklyDiv.style.left = x + 'px';
+      blocklyDiv.style.top = y + 'px';
+      blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+      blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+      Blockly.svgResize(demoWorkspace);
+    };
+    window.addEventListener('resize', onresize, false);
+    onresize();
+    Blockly.svgResize(demoWorkspace);
+  </script>
+
+</body>
+
+</html>

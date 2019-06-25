@@ -1,0 +1,67 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BlocklyVerticalTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/nunitofamily</item>
+    </style>
+
+    <style name="HomeCardTitle" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="HomeCardDetail" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StoryCardText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/md_blue_grey_900</item>
+    </style>
+
+    <style name="StoryCardCodeButton" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/md_blue_600</item>
+    </style>
+
+    <style name="StoryCardHeaderEditText" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:color">@color/white</item>
+    </style>
+
+    <style name="StoryHeaderText" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StoryCardTitle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/story_build_color</item>
+        <item name="android:textSize">@dimen/unit16</item>
+    </style>
+
+    <style name="WelcomePageText" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/comicsfamily</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lineSpacingExtra">@dimen/unit35</item>
+    </style>
+
+    <style name="ExerciseCardTextTitle" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@color/md_blue_grey_900</item>
+    </style>
+
+    <style name="ExerciseCardTextDetail" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/textDetail</item>
+    </style>
+
+    <style name="ExerciseCardButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/exercise_color</item>
+        <item name="android:layout_margin">@dimen/unit10</item>
+    </style>
+
+    <style name="ContentCardButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/learn_color</item>
+        <item name="android:layout_margin">@dimen/unit10</item>
+    </style>
+
+</resources>

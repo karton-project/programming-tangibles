@@ -1,0 +1,120 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Actionbar Headers -->
+    <string name="action_blockly">Code with Blockly</string>
+
+    <!-- Add New Statement -->
+    <string name="addstatement_name">Add New Statement</string>
+    <string name="create_new_statement">Create a new Code Notes card</string>
+    <string name="create_conditional_text">New Conditional Statement:</string>
+    <string name="create_output_text">New Output Statement:</string>
+    <string name="new_conditional_value_select_text">Select truth value:</string>
+    <string name="select_output_image_from_gallery"><u>Select Output Image From Gallery</u></string>
+    <string name="select_image_error">Selecting image is interrupted.</string>
+    <string name="firebase_conditional_exist_error">There is already a conditional with that text</string>
+    <string name="firebase_output_exist_error">There is already an output with that text</string>
+    <string name="saved_conditional_text">New conditional is saved</string>
+    <string name="saved_output_text">New output is saved</string>
+    <string name="create_new_output">Create New Output</string>
+    <string name="create_new_conditional">Create New Conditional</string>
+    <string name="save_logic_statement_error">You should enter a logic statement</string>
+    <string name="save_output_statement_error">You should fill output parameters</string>
+
+    <!-- Barcode Reader -->
+    <string name="scan_barcode_button">SCAN QR CODE</string>
+
+    <!--Blockly-->
+    <string name="no_block_error">No blocks in your program area.</string>
+
+    <!-- Compiler -->
+    <string name="codenotescompiler_name">Compile</string>
+    <string name="no_code_dialog_message">I am sorry! I could not recognize a meaningful code...</string>
+
+    <!-- Dependencies -->
+    <string name="low_storage_error">Low Storage</string>
+    <string name="no_camera_permission">Camera Usage is not allowed</string>
+    <string name="no_nfc_warning">NFC is not supported by your device.</string>
+    <string name="nfc_disabled_warning">You need to enable NFC.</string>
+
+    <!-- Exercises -->
+    <string name="card_watch_video_button_text">WATCH</string>
+    <string name="card_practice_button_text">TRY</string>
+
+    <!-- Feedback -->
+    <string name="sendfeedback_name">Send Feedback to Us</string>
+    <string name="sendfeedback_title">Your feedback will improve Code Notes!</string>
+    <string name="sendfeedback_formtitle">What is this feedback about?</string>
+    <string name="sendfeedback_formcontent">Can you explain the improvement detailly?</string>
+    <string name="sendfeedback_formtitle_required">Title will help us to categorize your improvement!</string>
+    <string name="sendfeedback_formcontent_required">Content will help us on how can we improve our application!</string>
+    <string name="sendfeedback_thankyoumessage">Thank you for your feedback!</string>
+
+    <!-- General -->
+    <string name="app_name">Code Notes</string>
+    <string name="hello_blank_fragment">Hello !</string>
+    <string name="error_text">An error occured.</string>
+    <string name="ok">OK</string>
+
+    <!-- Home Page -->
+    <string name="home_card_learn_title">LEARN</string>
+    <string name="home_card_learn_text">Learn the basics of programming, watch videos and do exercises</string>
+    <string name="home_card_practice_title">PRACTICE</string>
+    <string name="home_card_practice_text">Practice skils with projects</string>
+    <string name="home_card_share_title">SHARE</string>
+    <string name="home_card_share_text">Add your friends, create a group, share your projects, earn badges</string>
+    <string name="home_card_assess_title">ASSESS</string>
+    <string name="home_card_assess_text">Assess your knowledge with quizzes and projects</string>
+
+    <!-- Image Descriptions -->
+
+    <!-- Media Player -->
+    <string name="progress_title">Video Content is Loading</string>
+    <string name="progress_content">Retrieving data ...</string>
+
+    <!-- Notes -->
+    <string name="no_to_dos">You don\'t have any notes</string>
+
+
+    <!-- Sketch Activity-->
+    <string name="clear">Clear</string>
+    <string name="erase">Erase</string>
+    <string name="color">Color</string>
+    <string name="draw">Draw</string>
+
+    <!-- Storyboard Fragment -->
+    <string name="binded_text">Bound Components: </string>
+    <string name="add_from_camera"><u>Add From Camera</u></string>
+    <string name="add_from_gallery"><u>Choose From Gallery</u></string>
+    <string name="add_drawing"><u>Add Drawing</u></string>
+    <string name="create_new_frame">Add New Frame</string>
+    <string name="frameholder_name_hint">Change the Title</string>
+    <string name="add_header_frame"><u>New Chapter</u></string>
+    <string name="add_story_frame"><u>New Frame</u></string>
+    <string name="add_code"><u>Add Code</u></string>
+    <string name="tell_story">Tell the Story</string>
+
+    <!-- Tutorial -->
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="cancel">Cancel</string>
+    <string name="or_text">or</string>
+    <string name="save_text">Save</string>
+    <string name="tutorial_content_1">Every program begins with "START" card and ends with "END" card. If you do not put these cards, compiler cannot understand what you have typed.</string>
+    <string name="tutorial_content_2">"IF" card needs a conditional at the right hand side. If the conditional is true, you will see the result as output. </string>
+    <string name="tutorial_content_3">If the conditional is false, there will be no output. To get an output we should use "ELSE" card.</string>
+    <string name="tutorial_content_4">"ELSE" should stand at its own line. This expression will be evaluate the "ELSE" expression and draws a lion.</string>
+    <string name="tutorial_content_5">"FOR" card needs a number at the right hand side. If you say 3 times, there will be 3 trees as output. </string>
+    <string name="tutorial_content_6">"WHILE" card needs a conditional at the right hand side. It will be evaluated until the condition will be meet.</string>
+
+    <!-- Welcome -->
+    <string name="welcome_text">Welcome to Code Notes</string>
+    <string name="welcome_page_2">Create Stories...</string>
+    <string name="welcome_page_3">... or Animations</string>
+    <string name="welcome_page_4">... with Programming</string>
+    <string name="welcome_page_5">Let\'s build your first frame.</string>
+    <string name="welcome_page_6">Tap to first frame and take a photo.</string>
+    <string name="welcome_page_7">Tap to second frame and draw.</string>
+    <string name="welcome_page_8">Tap to code button to program frames.</string>
+    <string name="welcome_page_9">Your first story is ready!</string>
+</resources>

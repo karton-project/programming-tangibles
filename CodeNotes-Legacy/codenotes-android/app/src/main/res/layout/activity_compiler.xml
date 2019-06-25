@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.alpay.codenotes.CodeNotesCompilerActivity">
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/text_view"
+            android:text="No Text"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/resultRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/transparent"
+            tools:listitem="@layout/forloopcardview">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageView
+            android:id="@+id/result_ok_button"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@color/lightGrey"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_ok"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/read_code_button"
+            android:text="READ"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@color/lightGrey"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp" />
+
+    </RelativeLayout>
